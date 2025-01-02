@@ -1,1 +1,8 @@
 SQL Cheat Sheet
+## Select
+SELECT * FROM employees;
+
+## Where 
+ SELECT * FROM employees WHERE
+ department = 'IT';
+## 
