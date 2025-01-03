@@ -3,6 +3,117 @@ SQL Cheat Sheet
 SELECT * FROM employees;
 
 ## Where 
- SELECT * FROM employees WHERE
+SELECT * FROM employees WHERE
  department = 'IT';
-## 
+
+ ##AND
+ Combines Multiple Conditions In A WHERE
+ Clause
+ 
+ SELECT * FROM employees WHERE
+ department = 'IT' AND salary > 60000
+
+## DISTINCT
+
+Select Unique Values From A Column
+ SELECT DISTINCT department FROM
+ employees;
+
+## OR
+ Specifies Multiple Conditions Where Any One
+ Of Them Should Be True
+
+SELECT * FROM employees WHERE
+ department = 'HR' OR department =
+ 'Finance';
+
+ ##IN
+
+ Match Any Value In A List
+
+SELECT * FROM employees WHERE
+ department IN ('HR', 'Finance')
+
+## NOT
+ 
+Negates A Condition
+
+SELECT * FROM employees WHERE NOT
+ department = 'IT';
+
+##  LIMIT
+ 
+Limit The Number Of Rows Returned In The
+ Result Set
+
+SELECT * FROM employees LIMIT 3;
+ 
+##FETCH
+
+Retrieve A Specified Number Of Rows From
+ The Result Set
+
+SELECT * FROM employees FETCH FIRST
+ 3 ROWS ONLY;
+
+
+## LIKE
+ Match A Pattern In A Column
+ 
+SELECT * FROM employees WHERE
+ first_name LIKE 'J%';
+
+## IN
+ Match Any Value In A List
+
+SELECT * FROM employees WHERE
+ department IN ('HR', 'Finance');
+
+## BETWEEN
+ Match Values Within A Specified Range
+
+SELECT * FROM employees WHERE
+ salary BETWEEN 50000 AND 60000;
+
+##IS NULL
+
+Match NULL Values
+
+SELECT * FROM employees WHERE
+ department IS NULL;
+
+SQL Operator
+## AND
+ Combines Multiple Conditions In A WHERE
+ Clause
+ SELECT * FROM employees WHERE
+ department = 'IT' AND salary >
+ 60000;
+ 
+##OR
+ Specifies Multiple Conditions Where Any One
+ Of Them Should Be True
+
+SELECT * FROM employees WHERE
+ department = 'HR' OR department =
+ 'Finance';
+
+## NOT
+ Negates A Condition
+
+SELECT * FROM employees WHERE NOT
+ department = 'IT';
+
+## ORDER BY
+ Sorts the Result Set in Ascending or
+ Descending Order
+
+SELECT * FROM employees ORDER BY
+ salary DESC;
+ GROUP BY
+
+##Groups Rows that have the Same Values into
+ Summary Rows
+ SELECT department, COUNT(*) AS
+ employee_count FROM employees GROUP
+ BY department;
